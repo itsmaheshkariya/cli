@@ -41,8 +41,8 @@
     "multiple_mounts": true,
     "source": "network"
   },
-  "homepage_url": "http://path/to/homepage",
-  "import": [{"id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}],
+  "homepage_url": "",
+  "import": [{"id": "a"}],
   "incognito": "spanning, split, or not_allowed",
   "input_components": "",
   "key": "publicKey",
@@ -78,7 +78,7 @@
 
     "name": "Qcom",
     "short_name": "Qcom",
-    "start_url": "/",
+    "start_url": "http://localhost:8080/",
     "display": "standalone",
     "scope": "/",
     "theme_color": "#FFF",

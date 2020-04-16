@@ -1,6 +1,6 @@
 {
   "name": "@qcom.io/qcom-cli",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Qcom CLI is a comfortable environment for learning Qcom, and is the best way to start building a new single-page application in Qcom.",
   "main": "src/index.js",
   "bin": {
