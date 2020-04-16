@@ -1,11 +1,10 @@
 {
-  "name": "qcom-cli",
+  "name": "@qcom.io/qcom-cli",
   "version": "1.0.0",
   "description": "Qcom CLI is a comfortable environment for learning Qcom, and is the best way to start building a new single-page application in Qcom.",
   "main": "src/index.js",
   "bin": {
-    "@maheshkareeya/qcom": "bin/qcom",
-    "qcom": "bin/qcom"
+    "qcom": "bin/qcom-create-project"
   },
   "publishConfig": {
     "access": "public"
@@ -17,8 +16,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Mahesh Kariya",
+  "license": "MIT",
   "dependencies": {
     "arg": "^4.1.3",
     "chalk": "^4.0.0",
@@ -28,5 +27,14 @@
     "listr": "^0.14.3",
     "ncp": "^2.0.0",
     "pkg-install": "^1.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maheshkareeya/cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maheshkareeya/cli/issues"
+  },
+  "homepage": "https://github.com/maheshkareeya/cli#readme"
 }
