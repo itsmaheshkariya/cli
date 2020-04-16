@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@qcom.io/qcom": "^1.0.0"
+    "@qcom.io/qcom": "^1.0.1"
   }
 }
