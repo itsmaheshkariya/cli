@@ -17,10 +17,15 @@ import './components/QcomPageNotFound.js'
                     br(3),
                     view({id:"router"}),
                     bottomNavigationBar(
-                        qbutton({qtype:'lg'},i({class:'material-icons'},'face')),
-                        qbutton({qtype:'lg'},i({class:'material-icons'},'account_circle')),
-                        qbutton({qtype:'lg'},i({class:'material-icons'},'create')),
-                        qbutton({qtype:'lg'},i({class:'material-icons'},'dashboard'))
+                        bottomNavigationBarItem(i({class:'material-icons'},'home'),'Home'),
+                        bottomNavigationBarItem(i({class:'material-icons'},'email'),'Email'),
+                        bottomNavigationBarItem(i({class:'material-icons'},'person'),'Person'),
+                        bottomNavigationBarItem(i({class:'material-icons'},'phone'),'Phone')
+
+                        // qbutton({qtype:'lg'},i({class:'material-icons'},'face')),
+                        // qbutton({qtype:'lg'},i({class:'material-icons'},'account_circle')),
+                        // qbutton({qtype:'lg'},i({class:'material-icons'},'create')),
+                        // qbutton({qtype:'lg'},i({class:'material-icons'},'dashboard'))
                 )
                     )
                 )

@@ -1,6 +1,7 @@
 const cacheName = 'qcom';
 const staticAssets = [
-  './',
+  '.',
+//   './',
   './index.html',
   './QcomHome',
   './QcomPageOne',
