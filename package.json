@@ -1,6 +1,6 @@
 {
   "name": "@qcom.io/qcom-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Qcom CLI is a comfortable environment for learning Qcom, and is the best way to start building a new single-page application in Qcom.",
   "main": "src/index.js",
   "bin": {
@@ -11,7 +11,10 @@
   },
   "keywords": [
     "cli",
-    "qcom"
+    "qcom.io",
+    "qcom",
+    "framework",
+    "library"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
