@@ -1,4 +1,4 @@
-import { $, color } from '../node_modules/@qcom.io/qcom/index.js';
+import { $,$sw, color } from '../node_modules/@qcom.io/qcom/index.js';
 import './layout.js';
 $({
     theme: {
@@ -11,4 +11,4 @@ $({
         links: ['QcomHome', 'QcomPageOne', 'QcomPageTwo', 'QcomPageThree', 'QcomPageNotFound']
     }
 });
-// $sw('./sw.js');
+$sw('./sw.js');

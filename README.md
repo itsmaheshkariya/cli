@@ -1,8 +1,8 @@
 # QcomJs CLI
-[![Dependency Status](https://david-dm.org/maheshkareeya/qcom.svg)](https://david-dm.org/maheshkareeya/qcom)
+[![Dependency Status](https://david-dm.org/maheshkareeya/cli.svg)](https://david-dm.org/maheshkareeya/cli)
 [![devDependency Status](https://david-dm.org/maheshkareeya/cli/dev-status.svg)](https://david-dm.org/maheshkareeya/cli#info=devDependencies)
-[![NPM version](https://badge.fury.io/js/%40qcom.io%2Fqcom.svg)](https://www.npmjs.com/package/@qcom.io/qcom)
-![Downloads](https://img.shields.io/npm/dm/%40qcom.io%2Fqcom.svg?style=flat)
+[![NPM version](https://badge.fury.io/js/@qcom.io%2Fqcom-cli.svg)](https://www.npmjs.com/package/@qcom.io/qcom-cli)
+![Downloads](https://img.shields.io/npm/dm/%40qcom.io%2Fqcom-cli.svg?style=flat)
 
 
 ### Javascript Framework
