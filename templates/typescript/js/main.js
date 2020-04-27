@@ -1,14 +1,14 @@
-import { $, $sw, color } from '../node_modules/@qcom.io/qcom/index.js';
-import './QcomLayout.js';
+import { $, color } from '../node_modules/@qcom.io/qcom/index.js';
+import './layout.js';
 $({
     theme: {
-        background: color.green_darken_4,
-        color: color.green_accent_1,
-        hover: color.green_darken_1,
+        background: color.orange_darken_1,
+        color: color.white,
+        hover: color.orange_acent_1,
         font: ''
     },
     router: {
-        links: ['QcomHome', 'QcomPageOne', 'QcomPageTwo', 'QcomPageNotFound']
+        links: ['QcomHome', 'QcomPageOne', 'QcomPageTwo', 'QcomPageThree', 'QcomPageNotFound']
     }
 });
-$sw('./sw.js');
+// $sw('./sw.js');

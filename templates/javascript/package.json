@@ -1,25 +1,37 @@
 {
-  "name": "javascript",
-  "version": "1.0.5",
-  "description": "",
-  "main": "QcomApp.js",
+  "name": "qcom.io",
+  "version": "1.0.11",
+  "private": true,
+  "description": "A Brand new CLI For Qcom JS Framework for creating Custom web components with Dynamic HTML generator functions No more HTML tags.",
+  "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "start": "node index",
     "dev": "nodemon"
-},
-  "keywords": [],
-  "author": "",
+  },
+  "keywords": [
+    "CLI",
+    "Framework",
+    "Web Elements",
+    "Web Components",
+    "ES2020",
+    "Moduler JS",
+    "Custom Components",
+    "JS Library"
+  ],
+  "author": "Mahesh Kariya",
   "license": "ISC",
   "dependencies": {
-    "@qcom.io/qcom": "^1.0.4",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "@qcom.io/qcom": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*"
   },
   "devDependencies": {
-    "cssnano": "^4.1.10"
-}
+    "cssnano": "*",
+    "nodemon": "*",
+    "typescript": "*"
+  }
 }
