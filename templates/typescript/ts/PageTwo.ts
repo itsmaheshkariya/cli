@@ -1,6 +1,6 @@
 import {$,loop,key,qcom,len,import_module,table,tr,td,div,row,col,h1,right,h2,lorem,btn,card,icon,p,Qcom,theme,color,random,range,random_values} from '../node_modules/@qcom.io/qcom/index.js'
 //Global css variable
-$({
+export default {
     class:"QcomPageTwo",
     data:{
         items:[]
@@ -13,22 +13,20 @@ $({
                 td('Title'),
                 td('completed')
             ),
-            loop({
-                data:this.data.items,
-                html:tr(
-                    td(key('id')),
-                    td(key('title')),
-                    td('State is {{completed}}') // use {{}} inside text
+            ()=>this.data.items.map(item=>tr(
+                    td(item.id),
+                    td(item.title),
+                    td(item.completed),
                 )
-            })
+            )
         )
     ),
     code:{
-        updater:async ()=>{
+        onload:async ()=>{
             this.data.items = await qcom.get('https://jsonplaceholder.typicode.com/todos/')
-            this.html(this.template())
+            this.render()
         }
     }
-})
+}
 
 

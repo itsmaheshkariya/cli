@@ -1,6 +1,6 @@
 {
   "name": "qcom.io",
-  "version": "1.0.11",
+  "version": "1.0.22",
   "private": true,
   "description": "A Brand new CLI For Qcom JS Framework for creating Custom web components with Dynamic HTML generator functions No more HTML tags.",
   "main": "index.js",
@@ -24,7 +24,7 @@
   "author": "Mahesh Kariya",
   "license": "ISC",
   "dependencies": {
-    "@qcom.io/qcom": "^1.0.15",
+    "@qcom.io/qcom": "^1.0.22",
     "body-parser": "*",
     "cors": "*",
     "express": "*"

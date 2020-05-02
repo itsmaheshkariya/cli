@@ -7,6 +7,7 @@
 
 ### Javascript Framework
 Qcom CLI is a comfortable environment for learning QcomJS, and is the best way to start building a new single-page application in Qcom.
+Create Custom web elements wth Qcom and manage Web components with generating functions in Modern Javascript.
 
 #### Installation
 
@@ -28,8 +29,6 @@ npm run dev
 
 ### Or
 #### (Use following code to your html file)
-
-
 #### index.html (Hello World)
 ```html
 <qcom-hello-world></qcom-hello-world>
@@ -117,14 +116,12 @@ npm run dev
                             td('Name'),
                             td('Age')
                         ),
-                        loop({
-                            data:this.data.items,
-                            html:tr(
-                                td('#{{id}}'),
-                                td(key('name')),
-                                td(key('age'))
-                            )
-                        })
+            this.data.items.map(item =>
+                    tr(
+                        td(item.id),
+                        td(item.name),
+                        td(item.age))
+                        )
                     )
                 )
   })
@@ -149,14 +146,12 @@ $({
                 td('Title'),
                 td('completed')
             ),
-            loop({
-                data:this.data.items,
-                html:tr(
-                    td(key('id')),
-                    td(key('title')),
-                    td('State is {{completed}}') // use {{}} inside text
-                )
-            })
+            this.data.items.map(item =>
+                    tr(
+                        td(item.id),
+                        td(item.title),
+                        td(item.completed))
+                        )
         )
     ),
     code:{
@@ -203,38 +198,169 @@ $({
 
 </script>
 ```
-<!-- #### When Then
+#### Qcom Router
 ```html
-<qcom-when-then></qcom-when-then>
-
+<qcom-main></qcom-main>
 <script type="module">
-  import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
-  $({
-      name:'QcomWhenThen',
-      data:{
-          item:1
-      },
-      code:{
-            updater:()=>{
-                this.html(div(
-                    when(this.data.item == 10)
-                    .then(()=>h2({click:'QcomWhenThen.add()'},'This is true'))
-                ))
-            },
-            addone:()=>{
-                this.update.item = this.data.item + 1
-                this.updater()
+import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+    $({
+        name:'QcomOne',template:()=>div(
+            h1('Page One')
+        )
+    })
+    $({
+        name:'QcomTwo',template:()=>div(
+            h1('Page Two')
+        )
+    })
+    $({
+        name:'QcomError',template:()=>div(
+            h1('404 Page')
+        )
+    })
+    $({
+        name:'QcomMain',
+        template:()=>div(
+                appbar(
+                    btn({route:'/QcomOne',is:'link', class:'ml12'},'One'),
+                    btn({route:'/QcomTwo',is:'link', class:'ml12'},'Two'),
+                    btn({route:'/QcomError',is:'link', class:'ml12'},'404')
+                ),
+                div({class:'mt12', id:'root'})
+            ),
+            router:{
+                root:'QcomOne',
+                view:'root',
+                error:$('QcomError')(),
+                links:['QcomOne','QcomTwo']
             }
-      }
-  })
+    })
 </script>
-``` -->
+
+```
+
+
+
+
+#### Complete Example (index.html)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QcomJs</title>
+</head>
+<body>
+    <qcom-app></qcom-app>
+</body>
+</html>
+<script type="module">
+import {$,color} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+    $({
+        name:'QcomApp',
+        template:()=>div(
+                appbar(
+                    hamburger_menu(
+                        ul({class:'menu'},
+                            li({route:'/QcomOne',class:'item'},'QcomOne'),
+                            li({route:'/QcomTwo',class:'item'},'QcomTwo'))),
+                    btn({is:'link',class:'ml12'},'Appbar')
+                ),
+                div({class:'mt12', id:'root'})
+
+            ),
+        code:{
+            onload:async()=>{
+                let {QcomOne,QcomTwo,QcomError} = await import_module('./main.js')
+                $(QcomOne)
+                $(QcomTwo)
+                $(QcomError)
+            }
+        },
+        router:{
+            root:'QcomOne',
+            view:'root',
+            error:$('QcomError')(),
+            links:['QcomOne','QcomTwo']
+        },
+        theme: {
+            background: color.orange_darken_1,
+            color: color.white,
+            hover: color.orange_acent_1,
+            font: ''
+        }
+    })
+</script>
+```
+#### (main.js)
+```js
+export let QcomOne = {
+    name:'QcomOne',
+    type:'shadow',
+    data:{
+        items:[
+            {name:'mahesh'},{name:'dipak'}
+        ]
+    },
+    template:()=>div(h1('Page One'),
+            this.data.items.map(item =>
+                    div(item.name))
+}
+
+export let QcomTwo ={
+    name:'QcomTwo',
+    data:{
+        items:[]
+    },
+    template:()=>row(
+        col(form(
+            material(
+                h1('Registration'),
+                input({id:'name',class:'mb6',placeholder:'Name'}),
+                input({id:'email',class:'mb6',placeholder:'Email'}),
+                input({id:'password',class:'mb6',placeholder:'Password'}),
+                right(btn({click:'QcomTwo.post()',is:'md'},'Submit')))
+        )),
+        col(table(
+            tr(
+                td('Name'),
+                td('Email'),
+                td('Password')
+            ),
+            this.data.items.map(item =>
+                    tr(td(item.name),
+                        td(item.email),
+                        td(item.password)))
+        ))
+    ),
+    code:{
+        post:()=>{
+            this.data.items.push({
+                name:getval('name'),
+                email:getval('email'),
+                password:getval('password')
+            })
+            this.render()
+        }
+    }
+}
+
+export let QcomError = {
+    name:'QcomError',
+    template:()=>div(h1('404 Page'))
+}
+
+```
+### Demo
+![demoofqcom](https://unpkg.com/@qcom.io/qcom@latest/result.png)
+
 ## Functions
 
 | btn({is:''})                 	| is:'sm'             	| is:'md'            	| is:'lg'            	| is:'block'                 	| is:'link'         	|
 |------------------------------	|---------------------	|--------------------	|--------------------	|----------------------------	|-------------------	|
-| center()                     	| left()              	|       right()      	| justify()          	| container()                	| row()             	|
-| col({sm:'3',md:'6',lg:'12'}) 	| div()               	| p()                	| pre()              	| h1()                       	| h2()              	|
+| center()                     	| left()              	|right()      	        | justify()          	| container()                	| row()             	|
+| col(is:'12-6-6') 	| div()               	| p()                	| pre()              	| h1()                       	| h2()              	|
 | h3()                         	| h4()                	| h5()               	| h6()               	| head()                     	| title()           	|
 | body()                       	| ul()                	| ol()               	| li()               	| table()                    	| thead()           	|
 | tbody()                      	| th()                	| tr()               	| td()               	| header()                   	| footer()          	|
@@ -244,7 +370,7 @@ $({
 | change(id,html)     	        | list([])         	    | color.color_name   	|                    	| find()                      	|                   	|
 | click:'name.function()' 	    | rev(str)       	    | random([])         	| random_keys([])    	| random_values([])          	| String.hash()     	|
 | qcom.get(url)              	| qcom.post(url,{}) 	| qcom.put(url,{}) 	    | qcom.delete(url) 	    | await import_module()    	    | camelCaseToDash() 	|
-| dashToCamelCase()            	| dashToPascalCase()  	| isFunction()       	| key()            	    | loop({data:[],html:div()}) 	| when().then()     	|
+| dashToCamelCase()            	| dashToPascalCase()  	| isFunction()       	|             	    | 
 
 
 ## License
