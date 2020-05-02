@@ -26,6 +26,8 @@ qcom --install
 npm start
 npm run dev
 ```
+### check url
+http://localhost:8080
 
 ### Or
 #### (Use following code to your html file)
