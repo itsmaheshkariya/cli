@@ -24,7 +24,7 @@
   "author": "Mahesh Kariya",
   "license": "ISC",
   "dependencies": {
-    "@qcom.io/qcom": "^1.0.24",
+    "@qcom.io/qcom": "^1.0.25",
     "body-parser": "*",
     "cors": "*",
     "express": "*"
