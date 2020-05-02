@@ -18,7 +18,6 @@ const staticAssets = [
   './js/PageTwo.js',
   './js/PageThree.js',
   './js/PageFour.js',
-  './js/Home.js',
   './robots.txt',
 //   './material.css',
   './iconfont/material-icons.css',
