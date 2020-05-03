@@ -3,7 +3,9 @@
 [![devDependency Status](https://david-dm.org/maheshkareeya/cli/dev-status.svg)](https://david-dm.org/maheshkareeya/cli#info=devDependencies)
 [![NPM version](https://badge.fury.io/js/@qcom.io%2Fqcom-cli.svg)](https://www.npmjs.com/package/@qcom.io/qcom-cli)
 ![Downloads](https://img.shields.io/npm/dm/%40qcom.io%2Fqcom-cli.svg?style=flat)
-
+[![Coverage Status](https://coveralls.io/repos/github/maheshkareeya/cli/badge.svg?branch=master)](https://coveralls.io/github/maheshkareeya/cli?branch=master)
+[![Build Status](https://travis-ci.org/@qcom.io/qcom-cli.svg?branch=master)](https://travis-ci.org/@qcom.io/qcom-cli)
+![demoofqcom](https://unpkg.com/@qcom.io/qcom@latest/qcom.png)
 
 ### Javascript Framework
 Qcom CLI is a comfortable environment for learning QcomJS, and is the best way to start building a new single-page application in Qcom.
@@ -31,6 +33,13 @@ http://localhost:8080
 
 ### Or
 #### (Use following code to your html file)
+```html
+<script type="module">
+  import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+  // Or import {$} from './node_modules/@qcom.io/qcom/index.js'
+  $() // Now check your Inspector of Browser He will guide you for further steps
+</script>
+```
 #### index.html (Hello World)
 ```html
 <qcom-hello-world></qcom-hello-world>
@@ -43,6 +52,13 @@ http://localhost:8080
       template:()=>h1('Hello World')
   })
 </script>
+```
+## Rules 
+```html 
+<h1 class="head"  style = "color:red;  background-color:  yellow"    id="heading" > I am H1 </h1>
+```
+```js
+h1({class:'head', style:{ color:'red', backgroundColor : 'Yellow' }, id:'heading' }, 'I am H1' )
 ```
 
 #### Functions
@@ -118,7 +134,7 @@ http://localhost:8080
                             td('Name'),
                             td('Age')
                         ),
-            this.data.items.map(item =>
+            ()=>this.data.items.map(item =>
                     tr(
                         td(item.id),
                         td(item.name),
@@ -148,7 +164,7 @@ $({
                 td('Title'),
                 td('completed')
             ),
-            this.data.items.map(item =>
+            ()=>this.data.items.map(item =>
                     tr(
                         td(item.id),
                         td(item.title),
@@ -157,9 +173,9 @@ $({
         )
     ),
     code:{
-        updater:async ()=>{
+        onload:async ()=>{
             this.data.items = await qcom.get('https://jsonplaceholder.typicode.com/todos/')
-            this.html(this.template())
+            this.render()
         }
     }
 })
@@ -205,21 +221,21 @@ $({
 <qcom-main></qcom-main>
 <script type="module">
 import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
-    $({
+    let QcomOne = {
         name:'QcomOne',template:()=>div(
             h1('Page One')
         )
-    })
-    $({
+    }
+    let QcomTwo ={
         name:'QcomTwo',template:()=>div(
             h1('Page Two')
         )
-    })
-    $({
+    }
+    let QcomError = {
         name:'QcomError',template:()=>div(
             h1('404 Page')
         )
-    })
+    }
     $({
         name:'QcomMain',
         template:()=>div(
@@ -230,6 +246,7 @@ import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
                 ),
                 div({class:'mt12', id:'root'})
             ),
+       include:[QcomOne,QcomTwo,QcomError],
             router:{
                 root:'QcomOne',
                 view:'root',
@@ -238,12 +255,7 @@ import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
             }
     })
 </script>
-
 ```
-
-
-
-
 #### Complete Example (index.html)
 ```html
 <!DOCTYPE html>
