@@ -3,8 +3,8 @@
 [![devDependency Status](https://david-dm.org/maheshkareeya/cli/dev-status.svg)](https://david-dm.org/maheshkareeya/cli#info=devDependencies)
 [![NPM version](https://badge.fury.io/js/@qcom.io%2Fqcom-cli.svg)](https://www.npmjs.com/package/@qcom.io/qcom-cli)
 ![Downloads](https://img.shields.io/npm/dm/%40qcom.io%2Fqcom-cli.svg?style=flat)
-[![Coverage Status](https://coveralls.io/repos/github/maheshkareeya/cli/badge.svg?branch=master)](https://coveralls.io/github/maheshkareeya/cli?branch=master)
-[![Build Status](https://travis-ci.org/@qcom.io/qcom-cli.svg?branch=master)](https://travis-ci.org/@qcom.io/qcom-cli)
+<!-- [![Coverage Status](https://coveralls.io/repos/github/maheshkareeya/cli/badge.svg?branch=master)](https://coveralls.io/github/maheshkareeya/cli?branch=master) -->
+<!-- [![Build Status](https://travis-ci.org/@qcom.io/qcom-cli.svg?branch=master)](https://travis-ci.org/@qcom.io/qcom-cli) -->
 ![demoofqcom](https://unpkg.com/@qcom.io/qcom@latest/qcom.png)
 
 ### Javascript Framework
@@ -35,7 +35,7 @@ http://localhost:8080
 #### (Use following code to your html file)
 ```html
 <script type="module">
-  import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+  import $ from '//unpkg.com/@qcom.io/qcom'
   // Or import {$} from './node_modules/@qcom.io/qcom/index.js'
   $() // Now check your Inspector of Browser He will guide you for further steps
 </script>
@@ -45,7 +45,7 @@ http://localhost:8080
 <qcom-hello-world></qcom-hello-world>
 
 <script type="module">
-  import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+  import $ from '//unpkg.com/@qcom.io/qcom'
   // Or import {$} from './node_modules/@qcom.io/qcom/index.js'
   $({
       name:'QcomHelloWorld',
@@ -66,7 +66,7 @@ h1({class:'head', style:{ color:'red', backgroundColor : 'Yellow' }, id:'heading
 <qcom-functions></qcom-functions>
 
 <script type="module">
-  import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+  import $ from '//unpkg.com/@qcom.io/qcom'
   $({
       name:'QcomFunctions',
       template:()=>div(h1({click:'QcomFunctions.log()'},'Click Here')),
@@ -87,7 +87,7 @@ h1({class:'head', style:{ color:'red', backgroundColor : 'Yellow' }, id:'heading
 <qcom-data></qcom-data>
 
 <script type="module">
-  import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+  import $ from '//unpkg.com/@qcom.io/qcom'
   $({
       name:'QcomData',
       data:{
@@ -101,11 +101,11 @@ h1({class:'head', style:{ color:'red', backgroundColor : 'Yellow' }, id:'heading
       code:{
             add:()=>{
                     this.data.counter +=  1
-                    this.updater()
+                    this.render()
             },
             sub:()=>{
                     this.data.counter -=  1
-                    this.updater()
+                    this.render()
             }
       }
   })
@@ -117,7 +117,7 @@ h1({class:'head', style:{ color:'red', backgroundColor : 'Yellow' }, id:'heading
 <qcom-loop></qcom-loop>
 
 <script type="module">
-  import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+  import $ from '//unpkg.com/@qcom.io/qcom'
   $({
       name:'QcomLoop',
       data:{
@@ -151,7 +151,7 @@ h1({class:'head', style:{ color:'red', backgroundColor : 'Yellow' }, id:'heading
 <qcom-get></qcom-get>
 
 <script type="module">
-import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+import $ from '//unpkg.com/@qcom.io/qcom'
 $({
     name:'QcomGet',
     data:{
@@ -188,7 +188,7 @@ $({
 <qcom-css-example></qcom-css-example>
 
 <script type="module">
-  import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+  import $ from '//unpkg.com/@qcom.io/qcom'
   $({
       name:'QcomCssExample',
       globalcss:{ /* Global CSS*/
@@ -220,7 +220,7 @@ $({
 ```html
 <qcom-main></qcom-main>
 <script type="module">
-import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
+import $ from '//unpkg.com/@qcom.io/qcom'
     let QcomOne = {
         name:'QcomOne',
         data:{
@@ -298,24 +298,6 @@ import {$} from 'https://unpkg.com/@qcom.io/qcom@latest/index.js'
 
 ### Demo
 ![demoofqcom](https://unpkg.com/@qcom.io/qcom@latest/result.png)
-
-## Functions
-
-| btn({is:''})                 	| is:'sm'             	| is:'md'            	| is:'lg'            	| is:'block'                 	| is:'link'         	|
-|------------------------------	|---------------------	|--------------------	|--------------------	|----------------------------	|-------------------	|
-| center()                     	| left()              	|right()      	        | justify()          	| container()                	| row()             	|
-| col(is:'12-6-6') 	| div()               	| p()                	| pre()              	| h1()                       	| h2()              	|
-| h3()                         	| h4()                	| h5()               	| h6()               	| head()                     	| title()           	|
-| body()                       	| ul()                	| ol()               	| li()               	| table()                    	| thead()           	|
-| tbody()                      	| th()                	| tr()               	| td()               	| header()                   	| footer()          	|
-| nav()                        	| button()            	| input()            	| form()             	| option()                   	| select()          	|
-| span()                       	| textarea()          	| slot()             	| i()                	| view()                     	| label()           	|
-| icon('material-icon')   	    | range()             	| len()              	| getid(id)        	    | gethtml(id)              	    | gettext(id)     	    |
-| change(id,html)     	        | list([])         	    | color.color_name   	|                    	| find()                      	|                   	|
-| click:'name.function()' 	    | rev(str)       	    | random([])         	| random_keys([])    	| random_values([])          	| String.hash()     	|
-| qcom.get(url)              	| qcom.post(url,{}) 	| qcom.put(url,{}) 	    | qcom.delete(url) 	    | await import_module()    	    | camelCaseToDash() 	|
-| dashToCamelCase()            	| dashToPascalCase()  	| isFunction()       	|             	    | 
-
 
 ## License
 

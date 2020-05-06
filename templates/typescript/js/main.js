@@ -1,4 +1,4 @@
-import { $, $sw, appbar, br, view, color, btn } from '../node_modules/@qcom.io/qcom/index.js';
+import $, {$sw, appbar, br, view, color, btn } from '../node_modules/@qcom.io/qcom/index.js';
 import PageOne from '../js/PageOne.js';
 import PageTwo from '../js/PageTwo.js';
 import PageThree from '../js/PageThree.js';

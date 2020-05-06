@@ -1,4 +1,4 @@
-import {$,$sw,appbar,hamburger_menu,ul,li,br,view,bottomNavigationBar,bottomNavigationBarItem,color,div,row,col,h1,right,h2,lorem,btn,card,icon,p} from '../node_modules/@qcom.io/qcom/index.js'
+import $,{$sw,appbar,hamburger_menu,ul,li,br,view,bottomNavigationBar,bottomNavigationBarItem,color,div,row,col,h1,right,h2,lorem,btn,card,icon,p} from '../node_modules/@qcom.io/qcom/index.js'
 import PageOne from '../js/PageOne.js'
 import PageTwo from '../js/PageTwo.js'
 import PageThree from '../js/PageThree.js'

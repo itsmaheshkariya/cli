@@ -1,4 +1,4 @@
-import {$,loop,key,qcom,len,import_module,table,tr,td,div,row,col,h1,right,h2,lorem,btn,card,icon,p,Qcom,theme,color,random,range,random_values} from '../node_modules/@qcom.io/qcom/index.js'
+import $,{loop,key,qcom,len,import_module,table,tr,td,div,row,col,h1,right,h2,lorem,btn,card,icon,p,Qcom,theme,color,random,range,random_values} from '../node_modules/@qcom.io/qcom/index.js'
 //Global css variable
 export default {
     class:"QcomPageTwo",

@@ -1,4 +1,4 @@
-import {$,form,button,qcom,getid,ul,li,input,qinput,loop,br,key,len,import_module,table,tr,td,div,row,col,h1,right,h2,lorem,btn,card,icon,p,Qcom,theme,color,random,range,random_values} from '../node_modules/@qcom.io/qcom/index.js'
+import $,{form,button,qcom,getid,ul,li,input,qinput,loop,br,key,len,import_module,table,tr,td,div,row,col,h1,right,h2,lorem,btn,card,icon,p,Qcom,theme,color,random,range,random_values} from '../node_modules/@qcom.io/qcom/index.js'
 export default {
     name:'PageThree',
         data:{

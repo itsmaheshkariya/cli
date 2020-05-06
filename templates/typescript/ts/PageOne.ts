@@ -1,4 +1,4 @@
-import {$,row,col,h1,right,h2,lorem,btn,card,icon,p} from '../node_modules/@qcom.io/qcom/index.js'
+import $,{row,col,h1,right,h2,lorem,btn,card,icon,p} from '../node_modules/@qcom.io/qcom/index.js'
 export default {
     name:"PageOne",
     template:()=>row(
