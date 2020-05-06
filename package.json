@@ -1,6 +1,6 @@
 {
   "name": "@qcom.io/qcom-cli",
-  "version": "1.0.33",
+  "version": "1.0.35",
   "description": "Qcom CLI is a comfortable environment for learning Qcom for creating custom web components, and is the best way to start building a new single-page application with predefine web elements in QcomJs.",
   "main": "src/index.js",
   "bin": {
