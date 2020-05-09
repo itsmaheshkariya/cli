@@ -5,7 +5,7 @@
 ![Downloads](https://img.shields.io/npm/dm/%40qcom.io%2Fqcom-cli.svg?style=flat)
 <!-- [![Coverage Status](https://coveralls.io/repos/github/maheshkareeya/cli/badge.svg?branch=master)](https://coveralls.io/github/maheshkareeya/cli?branch=master) -->
 <!-- [![Build Status](https://travis-ci.org/@qcom.io/qcom-cli.svg?branch=master)](https://travis-ci.org/@qcom.io/qcom-cli) -->
-![demoofqcom](https://unpkg.com/@qcom.io/qcom@latest/qcom.png)
+![demoofqcom](https://unpkg.com/@qcom.io/qcom@1.0.36/qcom.png)
 
 ### Javascript Framework
 Qcom CLI is a comfortable environment for learning QcomJS, and is the best way to start building a new single-page application in Qcom by Creating Custom web elements wth Qcom and manage Web components with generating functions in Modern Javascript.
