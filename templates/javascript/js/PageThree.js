@@ -4,7 +4,7 @@ export default {
     data: {
         counter: 0
     },
-    template: () => div(/* div must be here to wrap all internal tags*/ h1(this.data.counter), button({ click: 'PageThree.add()' }, '+'), button({ click: 'PageThree.sub()' }, '-')),
+    template: () => div(/* div must be here to wrap all internal tags*/ h1(this.data.counter), button({ click:()=>PageThree.add() }, '+'), button({ click:()=>PageThree.sub() }, '-')),
     code: {
         add: () => {
             this.data.counter += 1;
