@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "live-server --port=8080 --entry-file=./index.html --cors",
-    "dev": "&& live-server --port=8080 --entry-file=./index.html --cors"
+    "dev": "live-server --port=8080 --entry-file=./index.html --cors"
   },
   "keywords": [
     "CLI",

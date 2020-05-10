@@ -10,18 +10,20 @@
 ### Javascript Framework
 Qcom CLI is a comfortable environment for learning QcomJS, and is the best way to start building a new single-page application in Qcom by Creating Custom web elements wth Qcom and manage Web components with generating functions in Modern Javascript.
 
-#### Installation
 
-```bash
-npm install @qcom.io/qcom
-```
-#### Or CLI Installation for Quick Start
+#### CLI Installation for Quick Start
 ```bash
 npm install -g @qcom.io/qcom-cli
 qcom --install && npm start
 ```
 ### check url
 http://localhost:8080
+
+#### Or
+
+```bash
+npm install @qcom.io/qcom --save
+```
 
 #### Or Use following code to your html file
 
