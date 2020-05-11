@@ -20,7 +20,9 @@
     "HTMLElement"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Mahesh Kariya",
   "license": "MIT",
@@ -32,7 +34,8 @@
     "inquirer": "^7.1.0",
     "listr": "^0.14.3",
     "ncp": "^2.0.0",
-    "pkg-install": "^1.0.0"
+    "pkg-install": "^1.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {},
   "repository": {
@@ -42,5 +45,6 @@
   "bugs": {
     "url": "https://github.com/maheshkareeya/cli/issues"
   },
-  "homepage": "https://github.com/maheshkareeya/cli#readme"
+  "homepage": "https://github.com/maheshkareeya/cli#readme",
+  "snyk": true
 }
