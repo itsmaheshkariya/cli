@@ -13,8 +13,8 @@ Qcom CLI is a comfortable environment for learning QcomJS, and is the best way t
 
 #### CLI Installation for Quick Start
 ```bash
-npm install -g @qcom.io/qcom-cli
-qcom --install && npm start
+npx @qcom.io/qcom-cli
+npm start
 ```
 ### check url
 http://localhost:8080
